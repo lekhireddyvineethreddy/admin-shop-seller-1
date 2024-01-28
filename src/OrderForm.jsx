@@ -44,7 +44,7 @@ const OrderForm = ({ onTakeOrder }) => {
         />
       </div>
       <div className="form-control">
-        <label htmlFor="price">Price:</label>
+        <label htmlFor="price"> Choose Price:</label>
         <input
           type="text"
           id="price"
