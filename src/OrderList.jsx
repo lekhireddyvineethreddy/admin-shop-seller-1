@@ -1,5 +1,6 @@
 // OrderList.js
 import React from 'react';
+import "./OrderList.css";
 
 const OrderList = ({ orders, onCancel }) => {
   return (

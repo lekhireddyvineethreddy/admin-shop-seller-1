@@ -1,0 +1,17 @@
+/* OrdersPage.css */
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .container h2 {
+    margin-top: 40px;
+  }
+  
+  .container h3 {
+    margin-top: 20px;
+  }
+  
+  

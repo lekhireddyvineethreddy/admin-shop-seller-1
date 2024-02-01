@@ -1,0 +1,30 @@
+.order-list {
+    margin-top: 20px;
+  }
+  
+  .order-list ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .order-list li {
+    margin-bottom: 10px;
+  }
+  
+  .order-details {
+    margin-right: 10px;
+  }
+  
+  .cancel-button {
+    background-color: #dc3545;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    padding: 5px 10px;
+    cursor: pointer;
+  }
+  
+  .cancel-button:hover {
+    background-color: #c82333;
+  }
+  

@@ -1,0 +1,38 @@
+.order-form {
+    width: 300px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .form-control {
+    margin-bottom: 15px;
+  }
+  
+  .form-control label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .form-control input[type="text"],
+  .form-control select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+  }
+  
+  .take-order-button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+  
+  .take-order-button:hover {
+    background-color: #0056b3;
+  }
+  
