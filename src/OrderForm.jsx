@@ -69,7 +69,7 @@ const OrderForm = ({ onTakeOrder }) => {
           <option value="Table 3">Table 3</option>
         </select>
       </div>
-      <button onClick={handleOrder} className="take-order-button">Take Order</button>
+      <button onClick={handleOrder} className="take-order-button">Add To Bill</button>
     </div>
   );
 };
