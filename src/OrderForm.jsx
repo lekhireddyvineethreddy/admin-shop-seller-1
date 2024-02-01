@@ -7,7 +7,9 @@ const OrderForm = ({ onTakeOrder }) => {
   const [selectedTable, setSelectedTable] = useState('');
 
   const handleOrder = () => {
-    if (!orderId.trim() || !chooseDish.trim() || !price.trim() || !selectedTable) return;
+    if (!orderId.trim() || !chooseDish.trim() || !price.trim() || !selectedTable) {
+      return; // Do nothing if any field is empty
+    }
     const newOrder = {
       id: parseInt(orderId.trim()),
       chooseDish: chooseDish.trim(),
@@ -44,7 +46,7 @@ const OrderForm = ({ onTakeOrder }) => {
         />
       </div>
       <div className="form-control">
-        <label htmlFor="price"> Choose Price:</label>
+        <label htmlFor="price">Choose Price:</label>
         <input
           type="text"
           id="price"
@@ -61,9 +63,9 @@ const OrderForm = ({ onTakeOrder }) => {
           onChange={e => setSelectedTable(e.target.value)}
         >
           <option value="">Select Table</option>
-          <option value="table1">Table 1</option>
-          <option value="table2">Table 2</option>
-          <option value="table3">Table 3</option>
+          <option value="Table 1">Table 1</option>
+          <option value="Table 2">Table 2</option>
+          <option value="Table 3">Table 3</option>
         </select>
       </div>
       <button onClick={handleOrder} className="take-order-button">Take Order</button>
