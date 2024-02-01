@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import "./OrderForm.css";
 
 const OrderForm = ({ onTakeOrder }) => {
@@ -6,6 +6,13 @@ const OrderForm = ({ onTakeOrder }) => {
   const [chooseDish, setChooseDish] = useState('');
   const [price, setPrice] = useState('');
   const [selectedTable, setSelectedTable] = useState('');
+  const [orders, setOrders] = useState([]); // State to store orders
+
+  useEffect(() => {
+    // Retrieve orders from local storage when component mounts
+    const storedOrders = JSON.parse(localStorage.getItem('orders')) || [];
+    setOrders(storedOrders);
+  }, []); // Empty dependency array ensures this effect runs only once on mount
 
   const handleOrder = () => {
     if (!orderId.trim() || !chooseDish.trim() || !price.trim() || !selectedTable) {
@@ -18,6 +25,11 @@ const OrderForm = ({ onTakeOrder }) => {
       table: selectedTable,
     };
     onTakeOrder(newOrder);
+    setOrders(prevOrders => [...prevOrders, newOrder]); 
+
+    localStorage.setItem('orders', JSON.stringify([...orders, newOrder]));
+
+    
     setOrderId('');
     setChooseDish('');
     setPrice('');

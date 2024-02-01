@@ -1,15 +1,20 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Header from './Header';
 import OrderForm from './OrderForm';
 import OrderList from './OrderList';
 import "./OrdersPage.css";
 
 const OrdersPage = () => {
-  const [orders, setOrders] = useState([
-    { id: 1, chooseDish: 'Pizza', price: 10, table: 'Table 1' },
-    { id: 2, chooseDish: 'Burger', price: 8, table: 'Table 2' },
-    { id: 3, chooseDish: 'Salad', price: 6, table: 'Table 3' },
-  ]);
+  // Initialize orders state with local storage data or empty array if no data is found
+  const [orders, setOrders] = useState(() => {
+    const storedOrders = localStorage.getItem('orders');
+    return storedOrders ? JSON.parse(storedOrders) : [];
+  });
+
+  // Update local storage when orders state changes
+  useEffect(() => {
+    localStorage.setItem('orders', JSON.stringify(orders));
+  }, [orders]);
 
   const handleTakeOrder = (newOrder) => {
     setOrders([...orders, newOrder]);

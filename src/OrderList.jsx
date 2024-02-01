@@ -9,7 +9,7 @@ const OrderList = ({ orders, onCancel }) => {
         {orders.map(order => (
           <li key={order.id}>
             <span className="order-details">
-              Order ID: {order.id}, Choose Dish: {order.chooseDish}, Price: ${order.price}, Table: {order.table}
+               {order.chooseDish},-${order.price},-{order.table}
             </span>
             <button onClick={() => onCancel(order.id)} className="cancel-button">DeleteOrder</button>
           </li>
